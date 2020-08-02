@@ -30,11 +30,19 @@ const StylingBurger = styled.div`
 
 
 const Burger = (props) => {
-    const transformedIngredients = Object.keys(props.ingredients).map(igKey => {
-          return [...Array(props.ingredients.igKey)].map((_, i) => {
+    let transformedIngredients = Object.keys(props.ingredients).map(igKey => {
+          return [...Array( props.ingredients[igKey] )].map((_, i) => {
               return <BurgerIngredients key={igKey + i} type={igKey} />
           })
-        });
+        }).reduce((accumulator, element) => {
+            return accumulator.concat(element)
+        }, []);
+
+        console.log(transformedIngredients);
+
+        if(transformedIngredients.length === 0){
+            transformedIngredients = <p>Start adding ingredients for a tastier Burger</p>
+        }  
 
     return(
         <StylingBurger>
