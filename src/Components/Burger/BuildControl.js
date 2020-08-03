@@ -89,7 +89,7 @@ const buildControl = (props) => (
     <StyledControl>
         <StyledLabel>{props.label}</StyledLabel>
         <LessButton>Less</LessButton>
-        <MoreButton>More</MoreButton>
+        <MoreButton onClick={props.added}>More</MoreButton>
     </StyledControl>
 );
 
