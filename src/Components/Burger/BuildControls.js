@@ -27,10 +27,10 @@ const controls = [
 const buildControls = (props) => (
     <StyledControls>
         {controls.map(ctrl => {
-            return <BuildControl added={() => props.addedIngredient(ctrl.type)} key={ctrl.label} label={ctrl.label} />
+            return <BuildControl disabled={props.disabled[ctrl.type]} removed={() => props.removedIngredient(ctrl.type)} added={() => props.addedIngredient(ctrl.type)} key={ctrl.label} label={ctrl.label} />
         })}
     </StyledControls>
 );
 
 
-export default buildControls; 
+export default buildControls;
