@@ -15,6 +15,11 @@ const StyledControls = styled.div`
     padding: 10px 0;
 `;
 
+const StyledPrice = styled.p`
+    font-weight: bold;
+    font-size: 20px;
+    color: red;
+`;
 
 const controls = [
     {label: 'Salad', type: 'salad'},
@@ -26,6 +31,10 @@ const controls = [
 
 const buildControls = (props) => (
     <StyledControls>
+        <StyledPrice>
+           Current Price of the Burger: ${props.price.toFixed(2)}
+        </StyledPrice>
+
         {controls.map(ctrl => {
             return <BuildControl disabled={props.disabled[ctrl.type]} removed={() => props.removedIngredient(ctrl.type)} added={() => props.addedIngredient(ctrl.type)} key={ctrl.label} label={ctrl.label} />
         })}
