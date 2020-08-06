@@ -13,9 +13,9 @@ const StyledBackdrop = styled.div`
 `;
 
 
-const backdrop = (props) => {
+const backdrop = (props) => (
     props.show ? <StyledBackdrop /> : null
-}
+);
 
 
 export default backdrop;

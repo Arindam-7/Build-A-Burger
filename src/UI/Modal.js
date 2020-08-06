@@ -1,5 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
+import Aux from '../HOCs/Auxilary/Auxilary';
+import Backdrop from './Backdrop';
 
 
 // styling for modal
@@ -27,13 +29,16 @@ const StyledModal = styled.div`
 
 
 const modal = (props) => (
-    <StyledModal
-    style={{
-        transform: props.show ? 'translateY(0)' : 'translateY(-100vh)',
-        opacity: props.show ? '1' : '0'
-    }}>
-        {props.children}
-    </StyledModal>
+    <Aux>
+        <Backdrop show={props.show} />
+        <StyledModal
+        style={{
+            transform: props.show ? 'translateY(0)' : 'translateY(-100vh)',
+            opacity: props.show ? '1' : '0'
+        }}>
+            {props.children}
+        </StyledModal>
+    </Aux>
 );
 
 
