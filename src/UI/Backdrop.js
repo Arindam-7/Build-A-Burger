@@ -14,7 +14,7 @@ const StyledBackdrop = styled.div`
 
 
 const backdrop = (props) => (
-    props.show ? <StyledBackdrop /> : null
+    props.show ? <StyledBackdrop onClick={props.clicked} /> : null
 );
 
 

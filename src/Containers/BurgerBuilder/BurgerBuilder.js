@@ -100,6 +100,12 @@ class BurgerBuilder extends Component {
         this.updatePurchasableState(updatedIngredients);
     }
 
+    backdropClicked = () => {
+        this.setState({
+            purchasing: false
+        })
+    }
+
     render () {
         const disabledInfo = {
             ...this.state.ingredients
@@ -114,7 +120,7 @@ class BurgerBuilder extends Component {
 
         return (
             <Aux>
-                <Modal show={this.state.purchasing}>
+                <Modal show={this.state.purchasing} clicked={this.backdropClicked}>
                     <OrderSummary ingredients={this.state.ingredients} />
                 </Modal>
                 <Burger ingredients={this.state.ingredients} />
