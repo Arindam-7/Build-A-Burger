@@ -16,8 +16,8 @@ const StyledLogo = styled.div`
 `;
 
 
-const logo = () => (
-    <StyledLogo>
+const logo = (props) => (
+    <StyledLogo style={{height: props.height}}>
         <img src={imagePath} alt="Burger Logo" />
     </StyledLogo>
 );

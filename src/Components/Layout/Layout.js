@@ -2,6 +2,7 @@ import React from 'react';
 import Aux from '../../HOCs/Auxilary/Auxilary';
 import styled from 'styled-components';
 import Toolbar from '../Toolbar';
+import Sidedrawer from '../Sidedrawer';
 
 
 // styled-component for the components of layout
@@ -14,6 +15,7 @@ const layout = (props) => {
     return(
         <Aux>
             <Toolbar />
+            <Sidedrawer />
             <StyledLayout>
                 {props.children}
             </StyledLayout>
