@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import Logo from './Logo';
 
 
 // styling for toolbar
@@ -26,7 +27,7 @@ const StyledToolbar = styled.header`
 const toolbar = () => (
     <StyledToolbar>
         <div>Menu</div>
-        <div>Logo</div>
+        <Logo />
         <nav>
             ...
         </nav>
