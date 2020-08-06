@@ -21,10 +21,10 @@ const StyledToolbar = styled.header`
 
     > nav {
         height: 100%;
-    }
 
-    @media(max-width: 499px) {
-        display: none; 
+        @media(max-width: 499px) {
+            display: none; 
+        }
     }
 `;
 
