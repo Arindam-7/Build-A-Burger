@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Logo from './Logo';
+import Navigation from '../Components/Navigation';
 
 
 // styling for toolbar
@@ -29,7 +30,7 @@ const toolbar = () => (
         <div>Menu</div>
         <Logo />
         <nav>
-            ...
+            <Navigation />
         </nav>
     </StyledToolbar>
 );
