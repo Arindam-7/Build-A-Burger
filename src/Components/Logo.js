@@ -7,11 +7,11 @@ import imagePath from '../assets/images/burger-logo.png';
 const StyledLogo = styled.div`
     height: 60%;
     padding: 8px;
-    background-color: #fbda6b;
+    background-color: white;
 
     > img {
         height: 100%;
-        width: 48px;
+        width: auto;
     }
 `;
 

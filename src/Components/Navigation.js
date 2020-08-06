@@ -8,35 +8,65 @@ const StyledList = styled.ul`
     padding: 0;
     list-style: none;
     display: flex;
+    flex-flow: column;
     align-items: center;
-    height: 100%; 
+    height: 100%;
 
     > li {
-        margin: 0;
+        margin: 10px 0;
         padding: 0;
-        display: flex;
-        align-items: center;
-        height: 100%;
+        display: block;
+        width: 100%;
 
         > a {
-            color: white;
+            color: brown;
             text-decoration: none;
-            height: 100%;
-            padding: 16px 10px;
-            border-buttom: 4px solid transparent;
+            width: 100%;
             box-sizing: border-box;
             display: block;
 
             &:hover {
-                background-color: #8F5C2C;
-                border-bottom: 4px solid #40A4C8;
-                color: white;
+                color: #40A4C8;
             }
 
             &:nth-child(1) {
-                background-color: #8F5C2C;
-                border-bottom: 4px solid #40A4C8;
+                color: #40A4C8;
+            }
+        }
+    }
+
+    @media(min-width: 500px) {
+        flex-flow: row;
+        
+        > li {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            height: 100%;
+            width: auto;
+    
+            > a {
                 color: white;
+                text-decoration: none;
+                height: 100%;
+                padding: 16px 10px;
+                border-buttom: 4px solid transparent;
+                box-sizing: border-box;
+                display: flex;
+                align-items: center;
+    
+                &:hover {
+                    background-color: #8F5C2C;
+                    border-bottom: 4px solid #40A4C8;
+                    color: white;
+                }
+    
+                &:nth-child(1) {
+                    background-color: #8F5C2C;
+                    border-bottom: 4px solid #40A4C8;
+                    color: white;
+                }
             }
         }
     }

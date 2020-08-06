@@ -39,7 +39,7 @@ const StyledSidedrawer = styled.div`
 const sidedrawer = () => {
     return (
         <StyledSidedrawer>
-            <Logo height="10%" />
+            <Logo height="50px" />
             <Navigation />
         </StyledSidedrawer>
     );
