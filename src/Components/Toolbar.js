@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Logo from './Logo';
 import Navigation from '../Components/Navigation';
+import DrawerToggler from './Sidedrawer/DrawerToggler/DrawerToggler';
 
 
 // styling for toolbar
@@ -29,10 +30,10 @@ const StyledToolbar = styled.header`
 `;
 
 
-const toolbar = () => (
+const toolbar = (props) => (
     <StyledToolbar>
-        <div>Menu</div>
-        <Logo />
+        <DrawerToggler toggled={props.toggleClicked}>Toggle</DrawerToggler>
+        <Logo /> 
         <nav>
             <Navigation />
         </nav>

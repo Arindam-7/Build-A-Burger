@@ -13,16 +13,23 @@ margin-top: 66px;
 
 class Layout extends Component {
     state = {
-        showSideDrawer: true
+        showSideDrawer: false
     }
 
     sideDrawerClosedHandler = () => {
-        this.setState({showSideDrawer: false})
+        this.setState({showSideDrawer: false}); 
     }
+
+    toggle = () => {
+        this.setState((prevState) => {
+            return {showSideDrawer: !prevState.showSideDrawer};
+        });
+    }
+
     render() {
         return(
             <Aux>
-            <Toolbar />
+            <Toolbar toggleClicked={this.toggle} /> 
             <Sidedrawer open={this.state.showSideDrawer} clicked={this.sideDrawerClosedHandler} />
             <StyledLayout>
                 {this.props.children}
