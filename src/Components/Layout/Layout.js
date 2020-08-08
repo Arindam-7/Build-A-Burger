@@ -1,8 +1,8 @@
-import React from 'react';
+import React, {Component} from 'react';
 import Aux from '../../HOCs/Auxilary/Auxilary';
 import styled from 'styled-components';
 import Toolbar from '../Toolbar';
-import Sidedrawer from '../Sidedrawer';
+import Sidedrawer from '../Sidedrawer/Sidedrawer';
 
 
 // styled-component for the components of layout
@@ -11,17 +11,26 @@ margin-top: 66px;
 `;
 
 
-const layout = (props) => {
-    return(
-        <Aux>
+class Layout extends Component {
+    state = {
+        showSideDrawer: true
+    }
+
+    sideDrawerClosedHandler = () => {
+        this.setState({showSideDrawer: false})
+    }
+    render() {
+        return(
+            <Aux>
             <Toolbar />
-            <Sidedrawer />
+            <Sidedrawer open={this.state.showSideDrawer} clicked={this.sideDrawerClosedHandler} />
             <StyledLayout>
-                {props.children}
+                {this.props.children}
             </StyledLayout>
         </Aux>
-    );
+        );
+    }
 }
 
-export default layout;
+export default Layout;
 
