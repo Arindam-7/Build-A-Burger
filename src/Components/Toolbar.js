@@ -32,7 +32,7 @@ const StyledToolbar = styled.header`
 
 const toolbar = (props) => (
     <StyledToolbar>
-        <DrawerToggler toggled={props.toggleClicked}>Toggle</DrawerToggler>
+        <DrawerToggler toggled={props.toggleClicked}></DrawerToggler>
         <Logo /> 
         <nav>
             <Navigation />
