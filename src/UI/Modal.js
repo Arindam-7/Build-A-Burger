@@ -48,7 +48,7 @@ class Modal extends Component {
                 }}>
                     {this.props.children}
                 </StyledModal>
-        n   </Aux>
+            </Aux>
         );
     }
 }
