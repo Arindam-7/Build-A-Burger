@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Component} from 'react';
 import styled from 'styled-components';
 import Aux from '../HOCs/Auxilary/Auxilary';
 import Backdrop from './Backdrop';
@@ -28,19 +28,31 @@ const StyledModal = styled.div`
 `;
 
 
-const modal = (props) => (
-    <Aux>
-        <Backdrop show={props.show} clicked={props.clicked} />
-        <StyledModal
-        style={{
-            transform: props.show ? 'translateY(0)' : 'translateY(-100vh)',
-            opacity: props.show ? '1' : '0'
-        }}>
-            {props.children}
-        </StyledModal>
-    </Aux>
-);
+class Modal extends Component {
+    shouldComponentUpdate(nextProps, nextState) {
+        return nextProps.show !== this.props.show;
+    }
+
+    componentWillUpdate () {
+        console.log('[Modal] will update');
+    }
+    
+    render () {
+        return(
+            <Aux>
+                <Backdrop show={this.props.show} clicked={this.props.clicked} />
+                <StyledModal
+                style={{
+                    transform: this.props.show ? 'translateY(0)' : 'translateY(-100vh)',
+                    opacity: this.props.show ? '1' : '0'
+                }}>
+                    {this.props.children}
+                </StyledModal>
+        n   </Aux>
+        );
+    }
+}
 
 
 
-export default modal;
+export default Modal;

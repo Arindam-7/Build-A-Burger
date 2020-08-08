@@ -7,13 +7,6 @@ import classes from '../Sidedrawer/Sidedrawer.css';
 
 
 const sidedrawer = (props) => {
-    let attachedClasses = [classes.sidedrawerCSS, classes.closeCSS];
-
-    if (props.open) {
-        attachedClasses = [classes.sidedrawerCSS, classes.openCSS];
-    }
-
-
     return (
         <Aux>
             <Backdrop show={props.open} clicked={props.clicked} />
